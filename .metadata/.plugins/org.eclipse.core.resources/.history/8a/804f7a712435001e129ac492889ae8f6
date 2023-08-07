@@ -1,0 +1,14 @@
+package in.mohit.restcontroller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+import in.mohit.model.Movie;
+
+@RestController
+public class MovieInfoController {
+	
+	
+	public Movie getMovieInfo(String userId) {
+		
+	}
+}

@@ -1,0 +1,6 @@
+package in.mohit.model;
+
+@Data
+public class Movie {
+
+}

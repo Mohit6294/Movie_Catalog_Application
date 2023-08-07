@@ -1,0 +1,11 @@
+package in.mohit.model;
+
+import lombok.Data;
+
+@Data
+public class CatalgItem {
+	
+	private String name;
+	private String desc;
+	private int rating;
+}

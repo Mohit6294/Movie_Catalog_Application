@@ -1,0 +1,8 @@
+package in.mohit.model;
+
+public class CatalgItem {
+	
+	private String name;
+	private String desc;
+	private int rating;
+}
