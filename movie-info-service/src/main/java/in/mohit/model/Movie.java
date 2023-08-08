@@ -1,5 +1,6 @@
 package in.mohit.model;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
