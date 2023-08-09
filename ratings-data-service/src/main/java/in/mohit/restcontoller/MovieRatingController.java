@@ -24,8 +24,8 @@ public class MovieRatingController {
 	public UserRating getRatings(@PathVariable String userId) {
 		
 		List<Rating> ratings = Arrays.asList(
-				new Rating("1234", 3),
-				new Rating("5678",4)
+				new Rating("157332", 3),
+				new Rating("157332",4)
 				);
 		UserRating userRatings = new UserRating();
 		userRatings.setUserRating(ratings);
