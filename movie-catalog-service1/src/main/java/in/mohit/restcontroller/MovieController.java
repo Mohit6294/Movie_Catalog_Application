@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.reactive.function.client.WebClient;
+//import org.springframework.web.reactive.function.client.WebClient;
 
 import in.mohit.model.CatalgItem;
 import in.mohit.model.Movie;
@@ -28,14 +28,14 @@ public class MovieController{
 	@Autowired
 	private RestTemplate restTemplate;
 	
-	@Autowired
-	private WebClient rBuilder;
+//	@Autowired
+//	private WebClient rBuilder;
 	
 	@GetMapping("/{userId}")
 	public List<CatalgItem> getCatalgItems(@PathVariable String userId){
 		
 		
-	  UserRating userRatings=	restTemplate.getForObject("http://localhost:8082/ratingsData/users/"+userId,UserRating.class);
+	  UserRating userRatings=	restTemplate.getForObject("http://rating-data-service/ratingsData/users/"+userId,UserRating.class);
 	  
 	  List<Rating> ratings = userRatings.getUserRating();
 		 
@@ -43,7 +43,7 @@ public class MovieController{
 		return ratings.stream()
 				.map(rating-> {
 				//Movie movie =restTemplate.getForObject(", Movie.class);
-			 Movie movie=	restTemplate.getForObject("http://localhost:8081/movies/"+rating.getMovieId(), Movie.class);
+			 Movie movie=	restTemplate.getForObject("http://movie-info-service/movies/"+rating.getMovieId(), Movie.class);
 					
 					return new CatalgItem(movie.getName(), "Desc", rating.getRating());
 				})
